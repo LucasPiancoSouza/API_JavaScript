@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <img src="" alt="logo">
+        <div>
+            <nav>
+                <a onclick="">Pesquisar pelo Cep</a>
+                <a onclick="">Pesquisar pelo endereço</a>
+            </nav>
+        </div>
+    </header>
+    <section class="cep">
+        <h2>
+            Buscar pelo CEP
+        </h2>
+        <input type="text" placeholder="CEP">
+        <button onclick="" class="busca_cep" id="busca_cep">Buscar Endereço</button>
+        <div class="resultado_cep" id="resultado_cep" >
+            <h2>Resultado</h2>
+            <p id="estado"></p>
+            <p id="cidade"></p>
+            <p id="bairro"></p>
+            <p id="logradouro"></p>
+        </div>
+    </section>
+    <section class="endereço">
+        <h2>
+            Buscar pelo endereço
+        </h2>
+        <input type="text" placeholder="UF">
+        <input type="text" placeholder="Cidade">
+        <input type="text" placeholder="Logradouro">
+        <button onclick="" class="busca_endereco" id="busca_endereco">Buscar Endereço</button>
+        <div class="resultado_endereco" id="resultado_endereco" >
+            <h2>Resultado</h2>
+
+        </div>
+    </section>
+</body>
+</html>
