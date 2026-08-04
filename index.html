@@ -5,43 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/localfind.ico">
     <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <img src="" alt="logo">
+        <img src="img/localfind.png" alt="logo" width="200vw">
         <div>
             <nav>
-                <a onclick="">Pesquisar pelo Cep</a>
-                <a onclick="">Pesquisar pelo endereço</a>
+                <a onclick="cep()">Pesquisar pelo Cep</a>
+                <a onclick="">Pesquisar pelo endereco</a>
             </nav>
         </div>
     </header>
-    <section class="cep">
-        <h2>
-            Buscar pelo CEP
-        </h2>
-        <input type="text" placeholder="CEP">
-        <button onclick="" class="busca_cep" id="busca_cep">Buscar Endereço</button>
-        <div class="resultado_cep" id="resultado_cep" >
-            <h2>Resultado</h2>
-            <p id="estado"></p>
-            <p id="cidade"></p>
-            <p id="bairro"></p>
-            <p id="logradouro"></p>
-        </div>
-    </section>
-    <section class="endereço">
-        <h2>
-            Buscar pelo endereço
-        </h2>
-        <input type="text" placeholder="UF">
-        <input type="text" placeholder="Cidade">
-        <input type="text" placeholder="Logradouro">
-        <button onclick="" class="busca_endereco" id="busca_endereco">Buscar Endereço</button>
-        <div class="resultado_endereco" id="resultado_endereco" >
-            <h2>Resultado</h2>
-
+    <h1>
+        Buscar por CEP
+    </h1>
+    <section class="hero" id="hero">
+        <div class="dados" id="dados">
+            <div class="cep" id="cep">
+                <input type="text" placeholder="CEP">
+                <button onclick="" class="busca_cep" id="busca_cep">Buscar Endereco</button>
+            </div>
+            <div class="endereco" id="endereco">
+               <input type="text" placeholder="UF"> 
+               <input type="text" placeholder="Cidade"> 
+               <input type="text" placeholder="Logradouro"> 
+               <button onclick="" class="busca_endereco" id="busca_endereco">Buscar Endereco</button>
+            </div>
         </div>
     </section>
 </body>
