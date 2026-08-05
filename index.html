@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -16,27 +16,44 @@
         <img src="img/localfind.png" alt="logo" width="200vw">
         <div>
             <nav>
-                <a onclick="cep()">Pesquisar pelo Cep</a>
-                <a onclick="">Pesquisar pelo endereco</a>
+                <a onclick="cep()"><b>Pesquisar pelo Cep</b></a>
+                <a onclick="endereco()"><b>Pesquisar pelo endereço</b></a>
             </nav>
         </div>
     </header>
-    <h1>
-        Buscar por CEP
-    </h1>
     <section class="hero" id="hero">
+            <h1>
+        Buscar por CEP
+            </h1>
+            <br>
         <div class="dados" id="dados">
-            <div class="cep" id="cep">
-                <input type="text" placeholder="CEP">
-                <button onclick="" class="busca_cep" id="busca_cep">Buscar Endereco</button>
+            <div class="cep ativo" id="cep">
+                <input type="text" placeholder="CEP" id="input_cep">
+                <button onclick="buscar_cep()" class="busca_cep" id="busca_cep">Buscar Endereco</button>
             </div>
-            <div class="endereco" id="endereco">
-               <input type="text" placeholder="UF"> 
-               <input type="text" placeholder="Cidade"> 
-               <input type="text" placeholder="Logradouro"> 
-               <button onclick="" class="busca_endereco" id="busca_endereco">Buscar Endereco</button>
+            <div class="endereco" id="endereco" >
+               <input type="text" placeholder="UF" id="input_UF"> 
+               <input type="text" placeholder="Cidade" id="input_cidade"> 
+               <input type="text" placeholder="Logradouro" id="input_logradouro"> 
+               <button onclick="" class="busca_endereco" id="busca_endereco"><b>Buscar Endereco</b></button>
             </div>
         </div>
+        <br>
+        <div class="historico_resultado">
+            <div class="resultado" id="resultado">
+                <p id="logradouro"></p>
+                <p id="bairro"></p>
+                <p id="cidade"></p>
+                <p id="estado"></p>
+            </div>
+            <div class="historico" id="historico">
+
+            </div>
+        </div>
+         
     </section>
+
+  
 </body>
 </html>
+
