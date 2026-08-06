@@ -28,8 +28,9 @@
             <br>
         <div class="dados" id="dados">
             <div class="cep ativo" id="cep">
-                <input type="text" placeholder="CEP" id="input_cep">
+                <input type="text" placeholder="CEP" id="input_cep" >
                 <button onclick="buscar_cep()" class="busca_cep" id="busca_cep">Buscar Endereco</button>
+                <button onclick="limpa_cep()" class="limpa_cep" id="limpa_cep">Limpar dados</button>
             </div>
             <div class="endereco" id="endereco" >
                <input type="text" placeholder="UF" id="input_UF"> 
@@ -41,13 +42,20 @@
         <br>
         <div class="historico_resultado">
             <div class="resultado" id="resultado">
+                <h4>Resultado</h4>
+                <div class="dados_resultado" id="dados_resultado">
+                    <br>
                 <p id="logradouro"></p>
                 <p id="bairro"></p>
                 <p id="cidade"></p>
                 <p id="estado"></p>
+                </div>
             </div>
             <div class="historico" id="historico">
+               <h4>historico</h4>
+                <div class="dados_historico" id="dados_historico">
 
+                </div>
             </div>
         </div>
          
