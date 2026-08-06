@@ -16,8 +16,8 @@
         <img src="img/localfind.png" alt="logo" width="200vw">
         <div>
             <nav>
-                <a onclick="cep()"><b>Pesquisar pelo Cep</b></a>
-                <a onclick="endereco()"><b>Pesquisar pelo endereço</b></a>
+                <p onclick="cep()"><b>Pesquisar pelo Cep</b></p>
+                <p onclick="endereco()"><b>Pesquisar pelo endereço</b></p>
             </nav>
         </div>
     </header>
@@ -28,7 +28,7 @@
             <br>
         <div class="dados" id="dados">
             <div class="cep ativo" id="cep">
-                <input type="text" placeholder="CEP" id="input_cep" >
+                <input type="text" placeholder="CEP EX: 01001000" id="input_cep" maxlength="8" >
                 <button onclick="buscar_cep()" class="busca_cep" id="busca_cep">Buscar Endereco</button>
                 <button onclick="limpa_cep()" class="limpa_cep" id="limpa_cep">Limpar dados</button>
             </div>

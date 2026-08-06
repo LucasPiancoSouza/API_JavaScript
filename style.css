@@ -44,7 +44,7 @@ header div{
     align-items: center;
 }
 
-header div nav a{
+header div nav p{
     padding: 1vw;
     cursor: pointer;
 }
@@ -82,7 +82,7 @@ h1{
     padding: 1vw;
 }
 .cep input{
-    width: 35vw;
+    width: 25vw;
     height: 5vh;
     border-radius: 1vw;
     border: none;
@@ -168,4 +168,10 @@ h1{
 .historico h4{
     font-weight: bold;
     text-align: center;
+}
+
+@media (max-width: 576px){
+ header div{
+    display: flex;
+ }
 }

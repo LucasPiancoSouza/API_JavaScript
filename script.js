@@ -30,17 +30,8 @@ function endereco() {
 }
 
 async function buscar_cep(){
-    let cep = document.getElementById("input_cep").value;
-
-    if(cep.length !== 8){
-        let id_resultado = document.getElementById('dados_resultado');
-        id_resultado.innerText = "";
-        id_resultado.innerText = "CEP Invalido, verique seu CEP";
-        setTimeout(() =>{
-        id_resultado.innerText = "";
-        }, 5000
-        )
-    }else{
+    let cep = document.getElementById("input_cep").value.replace(/\D/g, '');
+    
         let url = `https://viacep.com.br/ws/${cep}/json/`;
         const resposta = await fetch(url);
 
@@ -53,7 +44,6 @@ async function buscar_cep(){
         let id_resultado = document.getElementById('dados_resultado'); 
         if (dados.erro){
              id_resultado.innerHTML = `
-            <h4>Resultado</h4>
             <p>"CEP Invalido, verique seu CEP"</p>
         `;
         setTimeout(()=>{
@@ -68,6 +58,6 @@ async function buscar_cep(){
             <p>${dados.estado}</p>
         `;
     }
-    }
+    
 
 }
