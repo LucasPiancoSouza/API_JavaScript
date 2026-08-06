@@ -58,6 +58,41 @@ async function buscar_cep(){
             <p>${dados.estado}</p>
         `;
     }
+async function buscar_endereco(){
+    
+    let estado = document.getElementById("input_estado").value;
+    let cidade = document.getElementById("input_cidade").value;
+    let logradouro = document.getElementById("input_logradouro").value;
+        
+        let url = `https://viacep.com.br/ws/${estado}/${cidade}/${logradouro}/json/`;
+        const resposta = await fetch(url);
+
+        
+
+        if(!resposta.ok){
+            console.log("Verifique o Link");
+        }
+
+        let dados = await resposta.json();
+
+        let id_resultado = document.getElementById('dados_resultado'); 
+        if (dados.erro){
+             id_resultado.innerHTML = `
+            <p>"Endereço Invalido, verique seu Endereço"</p>
+        `;
+        setTimeout(()=>{
+            id_resultado.innerText ="";
+        },5000)
+        }
+        else{
+        id_resultado.innerHTML = `
+            <p>${dados.cep}</p>
+            
+        `;
+    }
+
+
+    }
     
 
 }
