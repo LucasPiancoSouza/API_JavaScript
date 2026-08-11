@@ -41,7 +41,9 @@ function endereco() {
 }
 
 async function buscar_cep(){
-    let cep = document.getElementById("input_cep").value;
+    let cep = document.getElementById("input_cep").value.replace(/[\.-]/g, "");
+    localStorage.setItem('cep',cep);
+    storage_cep = localStorage.getItem('cep');
 
     if(cep.length !== 8){
         let id_resultado = document.getElementById('dados_resultado');
@@ -79,6 +81,21 @@ async function buscar_cep(){
             <p>Estado: ${dados.estado}</p>
         `;
     }
+    
     }
+  
 
 }
+async function buscar_endereco(){
+let estado = document.getElementById("input_UF").value.replace(/\s/g, '');
+let cidade = document.getElementById("input_cidade").value.replace(/\s/g, '');
+let logradouro = document.getElementById("input_logradouro").value.replace(/\s/g, '');
+let id_resultado = document.getElementById("dados_resultado");
+
+let url = `https://viacep.com.br/ws/${estado}/${cidade}/${logradouro}/json/`;
+
+const resposta = await fetch(url);
+
+
+}
+
