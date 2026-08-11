@@ -22,6 +22,17 @@ function limpa_cep(){
     id_resultado.innerText = "";
 }
 
+function limpa_endereco(){
+    input_UF =  document.getElementById("input_UF");
+    input_cidade =  document.getElementById("input_cidade");
+    input_logradouro =  document.getElementById("input_logradouro");
+    id_resultado = document.getElementById("dados_resultado");
+
+    input_UF.value = '' ;
+    input_cidade.value = '' ;
+    input_logradouro.value = ''; 
+    id_resultado.innerText = "";
+}
 function endereco() {
     let id_cep = document.getElementById('cep');
     id_cep.classList.remove('ativo');
@@ -62,10 +73,10 @@ async function buscar_cep(){
         }
         else{
         id_resultado.innerHTML = `
-            <p>${dados.logradouro}</p>
-            <p>${dados.bairro}</p>
-            <p>${dados.localidade}</p>
-            <p>${dados.estado}</p>
+            <p>Rua: ${dados.logradouro}</p>
+            <p>Bairro: ${dados.bairro}</p>
+            <p>Cidade: ${dados.localidade}</p>
+            <p>Estado: ${dados.estado}</p>
         `;
     }
     }
