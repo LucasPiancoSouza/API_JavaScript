@@ -206,6 +206,10 @@ h1{
     .busca_cep, .busca_endereco, .limpa_cep {
         width: 70vw;
     }
+    .input_cep, .input_UF, .input_cidade, .input_logradouro {
+        font-size: 4vw;
+        padding: 2vw;
+    }
     .resultado, .historico{
         width: 75vw;
     }
@@ -219,7 +223,7 @@ h1{
     }
 
     .historico h4, .resultado h4{
-        font-size: 3vh;
+        font-size: 2.8vh;
     }
         button{
         font-size: 2vh;
@@ -238,7 +242,7 @@ h1{
         font-size: 1.8vh;
     }
       h1{
-        font-size: 5vh;
+        font-size: 4.5vh;
     }
      .dados{
         height: auto;
@@ -254,6 +258,10 @@ h1{
     .cep input, .endereco input,
     .busca_cep, .busca_endereco, .limpa_cep {
         width: 70vw;
+    }
+    .input_cep, .input_UF, .input_cidade, .input_logradouro {
+        font-size: 2.8vw;
+        padding: 2vw;
     }
     .resultado, .historico{
         width: 70vw;
@@ -297,10 +305,13 @@ h1{
         flex-direction: column;
         gap: 1.5vh;
     }
-
     .cep input, .endereco input,
     .busca_cep, .busca_endereco, .limpa_cep {
         width: 70vw;
+    }
+    .input_cep, .input_UF, .input_cidade, .input_logradouro {
+        font-size: 2.8vw;
+        padding: 2vw;
     }
     .resultado, .historico{
         width: 75vw;
@@ -315,7 +326,7 @@ h1{
     }
 
     .historico h4, .resultado h4{
-        font-size: 3.5vh;
+        font-size: 3vh;
     }
     button{
         font-size: 2vh;
@@ -348,6 +359,13 @@ h1{
     .busca_cep, .busca_endereco, .limpa_cep {
         width: 70vw;
     }
+     .input_cep, .input_UF, .input_cidade, .input_logradouro {
+        font-size: 1.5vw;
+        padding: 2vw;
+    }
+    .busca_cep,.busca_endereco,.limpa_cep{
+        font-size: 1.4vw;
+    }
     .resultado, .historico{
         width: 75vw;
     }
@@ -368,5 +386,8 @@ h1{
     }
     button{
         font-size: 2vh;
+    }
+    .item-endereco p{
+        font-size: 2vw;
     }
     }

@@ -6,12 +6,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 });
+// document.addEventListener("DOMContentLoaded", () => {
+//     id_input_UF = document.getElementById("input_UF");
+//     id_input_cidade = document.getElementById("input_cidade");
+//     id_input_logradouro = document.getElementById("input_logradouro");
+//     id_input_UF.addEventListener("keydown",(event) =>{
+//         if(event.key === "Enter"){
+//             buscar_cep();
+//         }
+//     })
+//     id_input_cidade.addEventListener("keydown",(event) =>{
+//         if(event.key === "Enter"){
+//             buscar_cep();
+//         }
+//     })
+//     id_input_logradouro.addEventListener("keydown",(event) =>{
+//         if(event.key === "Enter"){
+//             buscar_cep();
+//         }
+//     })
+// });
 
 function cep() {
    let id_cep = document.getElementById('cep');
     id_cep.classList.add('ativo');
    let id_endereco = document.getElementById('endereco');
     id_endereco.classList.remove('ativo');
+    let id_h1 = document.getElementById("Titulo");
+    id_h1.innerText = "Buscar por CEP";
 }
 
 function limpa_cep(){
@@ -32,13 +54,15 @@ function limpa_endereco(){
     input_UF.value = '' ;
     input_cidade.value = '' ;
     input_logradouro.value = ''; 
-    id_resultado.innerText = "";
+    id_resultado.innerHTML = "<br>";
 }
 function endereco() {
     let id_cep = document.getElementById('cep');
     id_cep.classList.remove('ativo');
     let id_endereco = document.getElementById('endereco');
     id_endereco.classList.add('ativo');
+    let id_h1 = document.getElementById("Titulo");
+    id_h1.innerText = "Buscar por endereço";
 }
 
 async function buscar_cep(){
