@@ -138,16 +138,60 @@ async function buscar_cep(){
    
 
 }
-async function buscar_endereco(){
-let estado = document.getElementById("input_UF").value.replace(/\s/g, '');
-let cidade = document.getElementById("input_cidade").value.replace(/\s/g, '');
-let logradouro = document.getElementById("input_logradouro").value.replace(/\s/g, '');
-let id_resultado = document.getElementById("dados_resultado");
+async function buscar_endereco() {
+    // Convertemos a UF para Maiúsculas automaticamente (ex: 'sp' vira 'SP')
+    let estado = document.getElementById("input_UF").value.trim().toUpperCase();
+    let cidade = document.getElementById("input_cidade").value.trim();
+    let logradouro = document.getElementById("input_logradouro").value.trim();
+    let id_resultado = document.getElementById('dados_resultado');
 
-let url = `https://viacep.com.br/ws/${estado}/${cidade}/${logradouro}/json/`;
+    // Validação dos campos obrigatórios
+    if (!estado || !cidade || !logradouro) {
+        alert("Por favor, preencha Estado (UF), Cidade e Logradouro.");
+        return;
+    }
 
-const resposta = await fetch(url);
+    if (estado.length !== 2) {
+        alert("O Estado (UF) deve ter exatamente 2 letras. Ex: SP, RJ, MG.");
+        return;
+    }
 
+    if (logradouro.length < 3) {
+        alert("O logradouro deve ter pelo menos 3 caracteres.");
+        return;
+    }
 
-} 
+    let url = `https://viacep.com.br/ws/${estado}/${encodeURIComponent(cidade)}/${encodeURIComponent(logradouro)}/json/`;
 
+    try {
+        const resposta = await fetch(url);
+        if (!resposta.ok) {
+            id_resultado.innerHTML = "<p>Erro na requisição. Verifique as informações fornecidas.</p>";
+            return;
+        }
+
+        let dados = await resposta.json();
+
+        if (!dados || dados.length === 0 || dados.erro) {
+            id_resultado.innerHTML = "<p>Nenhum endereço encontrado para os dados informados.</p>";
+            return;
+        }
+
+        id_resultado.innerHTML = ""; // Limpa os resultados anteriores
+
+        dados.forEach((item) => {
+            id_resultado.innerHTML += `
+                <div class="item-endereco" style="border-bottom: 1px solid #ccc; padding: 8px 0;">
+                    <p>CEP: ${item.cep}</p>
+                    <p>Rua: ${item.logradouro}</p>
+                    <p>Bairro: ${item.bairro}</p>
+                    <p>Cidade: ${item.localidade} - ${item.uf}</p>
+                </div>
+            `;
+        });
+
+    } catch (erro) {
+        console.error("Erro na busca por endereço:", erro);
+        id_resultado.innerHTML = "<p>Ocorreu um erro ao buscar o endereço.</p>";
+    }
+}

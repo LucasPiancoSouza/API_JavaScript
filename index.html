@@ -36,12 +36,13 @@
                 </div>
                 
             </div>
-            <div class="endereco" id="endereco" >
-               <input type="text" placeholder="Estado" id="input_UF"> 
-               <input type="text" placeholder="Cidade" id="input_cidade"> 
-               <input type="text" placeholder="Rua" id="input_logradouro"> 
-               <button onclick="" class="busca_endereco" id="busca_endereco"><b>Buscar Endereco</b></button>
-                <button onclick="limpa_endereco()" class="limpa_cep" id="limpa_cep"><b>Limpar dados</b></button>
+             <div class="endereco" id="endereco">
+                <!-- Recomendado: maxlength 2 para garantir que digitem a sigla da UF -->
+                <input type="text" placeholder="UF (ex: SP)" id="input_UF" maxlength="2"> 
+                <input type="text" placeholder="Cidade" id="input_cidade"> 
+                <input type="text" placeholder="Logradouro" id="input_logradouro"> 
+                <button onclick="buscar_endereco()" class="busca_endereco" id="busca_endereco"><b>Buscar Endereço</b></button>
+                <button onclick="limpa_endereco()" class="limpa_cep" id="limpa_endereco">Limpar</button>
             </div>
         </div>
         <br>
