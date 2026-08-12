@@ -30,8 +30,9 @@ header{
 }
 
 header img{
-    max-width: 150px;
+    width: 140px;
     height: auto;
+    position: absolute;
 }
 
 header div{
@@ -132,7 +133,7 @@ h1{
 .historico_resultado{
     display: flex;
     align-items: flex-start;
-    gap: 15vh;
+    gap: 4vh;
 }
 .resultado{
     width:20vw;
@@ -151,9 +152,12 @@ h1{
     justify-content: center;
     flex-direction: column;
     padding: 1vw;
+    height: auto;
+    overflow-y: auto;
 }
 .resultado p{
     font-size: 1vw;
+    overflow-wrap: anywhere;
 }
 .resultado h4{
     font-weight: bold;
@@ -163,10 +167,16 @@ h1{
     display: flex;
     flex-direction: column;
     padding: 1vw;
+    height: auto;
+    overflow-y: auto;
 }
 .historico h4{
     font-weight: bold;
     text-align: center;
+}
+.dados_historico p{
+    padding: 0.5vh;
+    cursor: pointer;
 }
 @media (max-width: 576px) { 
     header div nav{
@@ -175,6 +185,10 @@ h1{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+       img{
+        width: 30vw;
+        margin-right: 3vw;
     }
 
     .dados{
@@ -185,7 +199,7 @@ h1{
 
     .cep.ativo, .endereco.ativo {
         flex-direction: column;
-        gap: 1.5vh;
+
     }
 
     .cep input, .endereco input,
@@ -210,12 +224,14 @@ h1{
         button{
         font-size: 2vh;
     }
+ 
 }
 @media (min-width: 577px) and (max-width: 768px) { 
     header div nav{
         width: 100%;
         padding: 3vh;
         display: flex;
+        justify-content: center;
         align-items: center;
     }
     header div nav a{
@@ -263,7 +279,6 @@ h1{
     header div nav{
         width: 100%;
         display: flex;
-  
         justify-content: center;
     }
     h1{
